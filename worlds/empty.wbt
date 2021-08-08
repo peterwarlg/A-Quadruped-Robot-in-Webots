@@ -1,0 +1,1725 @@
+#VRML_SIM R2019a utf8
+WorldInfo {
+  basicTimeStep 16
+}
+Viewpoint {
+  orientation -0.02408229758804612 0.9850595714814865 0.17052179794850586 2.8293149111413904
+  position 3.146052673008289 2.323910429906113 -5.026329386377573
+}
+TexturedBackground {
+  texture "noon_cloudy_empty"
+}
+TexturedBackgroundLight {
+  texture "noon_sunny_garden"
+}
+RectangleArena {
+  floorSize 20 20
+  floorTileSize 1 1
+  wallHeight 1
+}
+DEF Friday Robot {
+  translation 0 0.5399999999999999 0
+  children [
+    DEF BR Hinge2Joint {
+      jointParameters HingeJointParameters {
+        anchor -0.28 0 0.15
+      }
+      jointParameters2 JointParameters {
+      }
+      device [
+        RotationalMotor {
+          name "BR_motor1"
+          maxTorque 20
+        }
+        PositionSensor {
+          name "BR_sensor1"
+        }
+      ]
+      device2 [
+        RotationalMotor {
+          name "BR_motor2"
+          maxTorque 20
+        }
+        PositionSensor {
+          name "BR_sensor2"
+        }
+      ]
+      endPoint DEF BL_hip Solid {
+        translation -0.28 0 0.15
+        children [
+          DEF BR_leg1 Solid {
+            translation 0 -0.125 0
+            children [
+              HingeJoint {
+                jointParameters HingeJointParameters {
+                  axis 0 0 1
+                  anchor 0 -0.125 0
+                }
+                device [
+                  RotationalMotor {
+                    name "BR_motor3"
+                    maxTorque 20
+                  }
+                  PositionSensor {
+                    name "BR_sensor3"
+                  }
+                ]
+                endPoint Solid {
+                  translation 0 -0.125 0
+                  rotation 0 0 1 0
+                  children [
+                    DEF BR_leg2 Solid {
+                      translation 0 -0.125 0
+                      children [
+                        DEF BR_foot TouchSensor {
+                          translation 0 -0.125 0
+                          children [
+                            DEF BR_foot Shape {
+                              appearance Appearance {
+                                material Material {
+                                  diffuseColor 0.6666666666666666 0 0
+                                }
+                              }
+                              geometry Sphere {
+                                radius 0.025
+                              }
+                            }
+                          ]
+                          boundingObject Sphere {
+                            radius 0.025
+                          }
+                          physics Physics {
+                          }
+                        }
+                        DEF BR_leg2 Shape {
+                          appearance Appearance {
+                            material Material {
+                              diffuseColor 1 0.8431372549019608 0
+                            }
+                          }
+                          geometry Box {
+                            size 0.04 0.25 0.02
+                          }
+                        }
+                      ]
+                      boundingObject DEF BR_leg2 Box {
+                        size 0.04 0.2 0.02
+                      }
+                      physics Physics {
+                      }
+                    }
+                    DEF BR_knee Shape {
+                      appearance Appearance {
+                        material Material {
+                          diffuseColor 0.6666666666666666 0 0
+                        }
+                      }
+                      geometry Sphere {
+                        radius 0.03
+                      }
+                    }
+                  ]
+                  boundingObject DEF BR_knee Sphere {
+                    radius 0.03
+                  }
+                  physics Physics {
+                  }
+                }
+              }
+              DEF BR_leg1 Shape {
+                appearance Appearance {
+                  material Material {
+                    diffuseColor 1 0.8431372549019608 0
+                  }
+                }
+                geometry Box {
+                  size 0.04 0.25 0.02
+                }
+              }
+            ]
+            boundingObject DEF BR_leg1 Box {
+              size 0.04 0.2 0.02
+            }
+            physics Physics {
+            }
+          }
+          DEF BR_hip Shape {
+            appearance DEF gold Appearance {
+              material DEF gold Material {
+                diffuseColor 1 0.8431372549019608 0
+              }
+            }
+            geometry Sphere {
+              radius 0.03
+            }
+          }
+        ]
+        name "solid(4)"
+        boundingObject DEF BR_hip Sphere {
+          radius 0.03
+        }
+        physics Physics {
+        }
+      }
+    }
+    DEF BL Hinge2Joint {
+      jointParameters HingeJointParameters {
+        anchor -0.28 0 -0.15
+      }
+      jointParameters2 JointParameters {
+      }
+      device [
+        RotationalMotor {
+          name "BL_motor1"
+          maxTorque 20
+        }
+        PositionSensor {
+          name "BL_sensor1"
+        }
+      ]
+      device2 [
+        RotationalMotor {
+          name "BL_motor2"
+          maxTorque 20
+        }
+        PositionSensor {
+          name "BL_sensor2"
+        }
+      ]
+      endPoint DEF BL_hip Solid {
+        translation -0.28 0 -0.15
+        children [
+          DEF BL_leg1 Solid {
+            translation 0 -0.125 0
+            children [
+              HingeJoint {
+                jointParameters HingeJointParameters {
+                  axis 0 0 1
+                  anchor 0 -0.125 0
+                }
+                device [
+                  RotationalMotor {
+                    name "BL_motor3"
+                    maxTorque 20
+                  }
+                  PositionSensor {
+                    name "BL_sensor3"
+                  }
+                ]
+                endPoint Solid {
+                  translation 0 -0.125 0
+                  rotation 0 0 1 0
+                  children [
+                    DEF BL_leg2 Solid {
+                      translation 0 -0.125 0
+                      children [
+                        DEF BL_foot TouchSensor {
+                          translation 0 -0.125 0
+                          children [
+                            DEF BL_foot Shape {
+                              appearance Appearance {
+                                material Material {
+                                  diffuseColor 0.6666666666666666 0 0
+                                }
+                              }
+                              geometry Sphere {
+                                radius 0.025
+                              }
+                            }
+                          ]
+                          boundingObject Sphere {
+                            radius 0.025
+                          }
+                          physics Physics {
+                          }
+                        }
+                        DEF BL_leg2 Shape {
+                          appearance Appearance {
+                            material Material {
+                              diffuseColor 1 0.8431372549019608 0
+                            }
+                          }
+                          geometry Box {
+                            size 0.04 0.25 0.02
+                          }
+                        }
+                      ]
+                      boundingObject DEF BL_leg2 Box {
+                        size 0.04 0.2 0.02
+                      }
+                      physics Physics {
+                      }
+                    }
+                    DEF BL_knee Shape {
+                      appearance Appearance {
+                        material Material {
+                          diffuseColor 0.6666666666666666 0 0
+                        }
+                      }
+                      geometry Sphere {
+                        radius 0.03
+                      }
+                    }
+                  ]
+                  boundingObject DEF BL_knee Sphere {
+                    radius 0.03
+                  }
+                  physics Physics {
+                  }
+                }
+              }
+              DEF BL_leg1 Shape {
+                appearance Appearance {
+                  material Material {
+                    diffuseColor 1 0.8431372549019608 0
+                  }
+                }
+                geometry Box {
+                  size 0.04 0.25 0.02
+                }
+              }
+            ]
+            boundingObject DEF BL_leg1 Box {
+              size 0.04 0.2 0.02
+            }
+            physics Physics {
+            }
+          }
+          DEF BL_hip Shape {
+            appearance DEF gold Appearance {
+              material DEF gold Material {
+                diffuseColor 1 0.8431372549019608 0
+              }
+            }
+            geometry Sphere {
+              radius 0.03
+            }
+          }
+        ]
+        name "solid(2)"
+        boundingObject DEF BL_hip Sphere {
+          radius 0.03
+        }
+        physics Physics {
+        }
+      }
+    }
+    DEF FR Hinge2Joint {
+      jointParameters HingeJointParameters {
+        anchor 0.28 0 0.15
+      }
+      jointParameters2 JointParameters {
+      }
+      device [
+        RotationalMotor {
+          name "FR_motor1"
+          maxTorque 20
+        }
+        PositionSensor {
+          name "FR_sensor1"
+        }
+      ]
+      device2 [
+        RotationalMotor {
+          name "FR_motor2"
+          maxTorque 20
+        }
+        PositionSensor {
+          name "FR_sensor2"
+        }
+      ]
+      endPoint DEF FR_hip Solid {
+        translation 0.28 0 0.15
+        children [
+          DEF FR_leg1 Solid {
+            translation 0 -0.125 0
+            children [
+              HingeJoint {
+                jointParameters HingeJointParameters {
+                  axis 0 0 1
+                  anchor 0 -0.125 0
+                }
+                device [
+                  RotationalMotor {
+                    name "FR_motor3"
+                    maxTorque 20
+                  }
+                  PositionSensor {
+                    name "FR_sensor3"
+                  }
+                ]
+                endPoint DEF FR_knee Solid {
+                  translation 0 -0.125 0
+                  rotation 0 0 1 0
+                  children [
+                    DEF FR_leg2 Solid {
+                      translation 0 -0.125 0
+                      children [
+                        DEF FR_foot TouchSensor {
+                          translation 0 -0.125 0
+                          children [
+                            DEF FR_foot Shape {
+                              appearance Appearance {
+                                material Material {
+                                  diffuseColor 0.6666666666666666 0 0
+                                }
+                              }
+                              geometry Sphere {
+                                radius 0.025
+                              }
+                            }
+                          ]
+                          boundingObject Sphere {
+                            radius 0.025
+                          }
+                          physics Physics {
+                          }
+                        }
+                        DEF FR_leg2 Shape {
+                          appearance Appearance {
+                            material Material {
+                              diffuseColor 1 0.8431372549019608 0
+                            }
+                          }
+                          geometry Box {
+                            size 0.04 0.25 0.02
+                          }
+                        }
+                      ]
+                      boundingObject DEF FR_leg2 Box {
+                        size 0.04 0.2 0.02
+                      }
+                      physics Physics {
+                      }
+                    }
+                    DEF FR_knee Shape {
+                      appearance Appearance {
+                        material Material {
+                          diffuseColor 0.6666666666666666 0 0
+                        }
+                      }
+                      geometry Sphere {
+                        radius 0.03
+                      }
+                    }
+                  ]
+                  boundingObject DEF FR_knee Sphere {
+                    radius 0.03
+                  }
+                  physics Physics {
+                  }
+                }
+              }
+              DEF FR_leg1 Shape {
+                appearance Appearance {
+                  material Material {
+                    diffuseColor 1 0.8431372549019608 0
+                  }
+                }
+                geometry Box {
+                  size 0.04 0.25 0.02
+                }
+              }
+            ]
+            boundingObject DEF FR_leg1 Box {
+              size 0.04 0.2 0.02
+            }
+            physics Physics {
+            }
+          }
+          DEF FR_hip Shape {
+            appearance Appearance {
+              material Material {
+                diffuseColor 1 0.8431372549019608 0
+              }
+            }
+            geometry Sphere {
+              radius 0.03
+            }
+          }
+        ]
+        name "solid(1)"
+        boundingObject DEF FR_hip Sphere {
+          radius 0.03
+        }
+        physics Physics {
+        }
+      }
+    }
+    DEF FL Hinge2Joint {
+      jointParameters HingeJointParameters {
+        anchor 0.28 0 -0.15
+      }
+      jointParameters2 JointParameters {
+      }
+      device [
+        RotationalMotor {
+          name "FL_motor1"
+          maxTorque 20
+        }
+        PositionSensor {
+          name "FL_sensor1"
+        }
+      ]
+      device2 [
+        RotationalMotor {
+          name "FL_motor2"
+          maxTorque 20
+        }
+        PositionSensor {
+          name "FL_sensor2"
+        }
+      ]
+      endPoint Solid {
+        translation 0.28 0 -0.15
+        children [
+          DEF FL_leg1 Solid {
+            translation 0 -0.125 0
+            children [
+              HingeJoint {
+                jointParameters HingeJointParameters {
+                  axis 0 0 1
+                  anchor 0 -0.125 0
+                }
+                device [
+                  RotationalMotor {
+                    name "FL_motor3"
+                    maxTorque 20
+                  }
+                  PositionSensor {
+                    name "FL_sensor3"
+                  }
+                ]
+                endPoint Solid {
+                  translation 0 -0.125 0
+                  rotation 0 0 1 0
+                  children [
+                    DEF FL_leg2 Solid {
+                      translation 0 -0.125 0
+                      children [
+                        DEF FL_foot TouchSensor {
+                          translation 0 -0.125 0
+                          children [
+                            DEF FL_foot Shape {
+                              appearance Appearance {
+                                material Material {
+                                  diffuseColor 0.6666666666666666 0 0
+                                }
+                              }
+                              geometry Sphere {
+                                radius 0.025
+                              }
+                            }
+                          ]
+                          boundingObject Sphere {
+                            radius 0.025
+                          }
+                          physics Physics {
+                          }
+                        }
+                        DEF FL_leg2 Shape {
+                          appearance DEF gold Appearance {
+                            material DEF gold Material {
+                              diffuseColor 1 0.8431372549019608 0
+                            }
+                          }
+                          geometry Box {
+                            size 0.04 0.25 0.02
+                          }
+                        }
+                      ]
+                      boundingObject DEF FL_leg2 Box {
+                        size 0.04 0.2 0.02
+                      }
+                      physics Physics {
+                      }
+                    }
+                    DEF FL_knee Shape {
+                      appearance Appearance {
+                        material DEF red Material {
+                          diffuseColor 0.6666666666666666 0 0
+                        }
+                      }
+                      geometry Sphere {
+                        radius 0.03
+                      }
+                    }
+                  ]
+                  boundingObject DEF FL_knee Sphere {
+                    radius 0.03
+                  }
+                  physics Physics {
+                  }
+                }
+              }
+              DEF FL_leg1 Shape {
+                appearance Appearance {
+                  material Material {
+                    diffuseColor 1 0.8431372549019608 0
+                  }
+                }
+                geometry Box {
+                  size 0.04 0.25 0.02
+                }
+              }
+            ]
+            boundingObject DEF FL_leg1 Box {
+              size 0.04 0.25 0.02
+            }
+            physics Physics {
+            }
+          }
+          DEF FL_hip Shape {
+            appearance Appearance {
+              material Material {
+                diffuseColor 1 1 0
+              }
+            }
+            geometry Sphere {
+              radius 0.03
+            }
+          }
+        ]
+        boundingObject DEF FL_hip Sphere {
+          radius 0.03
+        }
+        physics Physics {
+        }
+      }
+    }
+    DEF BODY Group {
+      children [
+        DEF BODY Shape {
+          appearance Appearance {
+            material Material {
+              diffuseColor 0.6666666666666666 0 0
+            }
+          }
+          geometry Box {
+            size 0.6 0.03 0.3
+          }
+        }
+      ]
+    }
+  ]
+  name "Friday"
+  boundingObject USE BODY
+  physics Physics {
+  }
+  controller "Friday"
+}
+DEF Tuesday Robot {
+  translation 0 0.6 1
+  children [
+    DEF BR Hinge2Joint {
+      jointParameters HingeJointParameters {
+        anchor -0.28 0 0.15
+      }
+      jointParameters2 JointParameters {
+      }
+      device [
+        RotationalMotor {
+          name "BR_motor1_Alp"
+          maxTorque 20
+        }
+        PositionSensor {
+          name "BR_sensor1_Alp"
+        }
+      ]
+      device2 [
+        RotationalMotor {
+          name "BR_motor2_Alp"
+          maxTorque 20
+        }
+        PositionSensor {
+          name "BR_sensor2_Alp"
+        }
+      ]
+      endPoint DEF BL_hip Solid {
+        translation -0.28 0 0.15
+        children [
+          DEF BR_leg1 Solid {
+            translation 0 -0.125 0
+            children [
+              HingeJoint {
+                jointParameters HingeJointParameters {
+                  axis 0 0 1
+                  anchor 0 -0.125 0
+                }
+                device [
+                  RotationalMotor {
+                    name "BR_motor3_Alp"
+                    maxTorque 20
+                  }
+                  PositionSensor {
+                    name "BR_sensor3_Alp"
+                  }
+                ]
+                endPoint Solid {
+                  translation 0 -0.125 0
+                  rotation 0 0 1 0
+                  children [
+                    DEF BR_leg2 Solid {
+                      translation 0 -0.125 0
+                      children [
+                        DEF BR_foot TouchSensor {
+                          translation 0 -0.125 0
+                          children [
+                            DEF BR_foot Shape {
+                              appearance Appearance {
+                                material Material {
+                                  diffuseColor 0.9607843137254902 0.9607843137254902 0.9607843137254902
+                                }
+                              }
+                              geometry Sphere {
+                                radius 0.025
+                              }
+                            }
+                          ]
+                          boundingObject Sphere {
+                            radius 0.025
+                          }
+                          physics Physics {
+                          }
+                        }
+                        DEF BR_leg2 Shape {
+                          appearance Appearance {
+                            material Material {
+                              diffuseColor 0.27450980392156865 0.5098039215686274 0.7058823529411765
+                            }
+                          }
+                          geometry Box {
+                            size 0.04 0.25 0.02
+                          }
+                        }
+                      ]
+                      boundingObject DEF BR_leg2 Box {
+                        size 0.04 0.2 0.02
+                      }
+                      physics Physics {
+                      }
+                    }
+                    DEF BR_knee Shape {
+                      appearance Appearance {
+                        material Material {
+                          diffuseColor 0.9607843137254902 0.9607843137254902 0.9607843137254902
+                        }
+                      }
+                      geometry Sphere {
+                        radius 0.03
+                      }
+                    }
+                  ]
+                  boundingObject DEF BR_knee Sphere {
+                    radius 0.03
+                  }
+                  physics Physics {
+                  }
+                }
+              }
+              DEF BR_leg1 Shape {
+                appearance Appearance {
+                  material Material {
+                    diffuseColor 0.27450980392156865 0.5098039215686274 0.7058823529411765
+                  }
+                }
+                geometry Box {
+                  size 0.04 0.25 0.02
+                }
+              }
+            ]
+            boundingObject DEF BR_leg1 Box {
+              size 0.04 0.2 0.02
+            }
+            physics Physics {
+            }
+          }
+          DEF BR_hip Shape {
+            appearance Appearance {
+              material Material {
+                diffuseColor 0.9607843137254902 0.9607843137254902 0.9607843137254902
+              }
+            }
+            geometry Sphere {
+              radius 0.03
+            }
+          }
+        ]
+        name "solid(4)"
+        boundingObject DEF BR_hip Sphere {
+          radius 0.03
+        }
+        physics Physics {
+        }
+      }
+    }
+    DEF BL Hinge2Joint {
+      jointParameters HingeJointParameters {
+        anchor -0.28 0 -0.15
+      }
+      jointParameters2 JointParameters {
+      }
+      device [
+        RotationalMotor {
+          name "BL_motor1_Alp"
+          maxTorque 20
+        }
+        PositionSensor {
+          name "BL_sensor1_Alp"
+        }
+      ]
+      device2 [
+        RotationalMotor {
+          name "BL_motor2_Alp"
+          maxTorque 20
+        }
+        PositionSensor {
+          name "BL_sensor2_Alp"
+        }
+      ]
+      endPoint DEF BL_hip Solid {
+        translation -0.28 0 -0.15
+        children [
+          DEF BL_leg1 Solid {
+            translation 0 -0.125 0
+            children [
+              HingeJoint {
+                jointParameters HingeJointParameters {
+                  axis 0 0 1
+                  anchor 0 -0.125 0
+                }
+                device [
+                  RotationalMotor {
+                    name "BL_motor3_Alp"
+                    maxTorque 20
+                  }
+                  PositionSensor {
+                    name "BL_sensor3_Alp"
+                  }
+                ]
+                endPoint Solid {
+                  translation 0 -0.125 0
+                  rotation 0 0 1 0
+                  children [
+                    DEF BL_leg2 Solid {
+                      translation 0 -0.125 0
+                      children [
+                        DEF BL_foot TouchSensor {
+                          translation 0 -0.125 0
+                          children [
+                            DEF BL_foot Shape {
+                              appearance Appearance {
+                                material Material {
+                                  diffuseColor 0.9607843137254902 0.9607843137254902 0.9607843137254902
+                                }
+                              }
+                              geometry Sphere {
+                                radius 0.025
+                              }
+                            }
+                          ]
+                          boundingObject Sphere {
+                            radius 0.025
+                          }
+                          physics Physics {
+                          }
+                        }
+                        DEF BL_leg2 Shape {
+                          appearance Appearance {
+                            material Material {
+                              diffuseColor 0.27450980392156865 0.5098039215686274 0.7058823529411765
+                            }
+                          }
+                          geometry Box {
+                            size 0.04 0.25 0.02
+                          }
+                        }
+                      ]
+                      boundingObject DEF BL_leg2 Box {
+                        size 0.04 0.2 0.02
+                      }
+                      physics Physics {
+                      }
+                    }
+                    DEF BL_knee Shape {
+                      appearance Appearance {
+                        material Material {
+                          diffuseColor 0.9607843137254902 0.9607843137254902 0.9607843137254902
+                        }
+                      }
+                      geometry Sphere {
+                        radius 0.03
+                      }
+                    }
+                  ]
+                  boundingObject DEF BL_knee Sphere {
+                    radius 0.03
+                  }
+                  physics Physics {
+                  }
+                }
+              }
+              DEF BL_leg1 Shape {
+                appearance Appearance {
+                  material Material {
+                    diffuseColor 0.27450980392156865 0.5098039215686274 0.7058823529411765
+                  }
+                }
+                geometry Box {
+                  size 0.04 0.25 0.02
+                }
+              }
+            ]
+            boundingObject DEF BL_leg1 Box {
+              size 0.04 0.2 0.02
+            }
+            physics Physics {
+            }
+          }
+          DEF BL_hip Shape {
+            appearance DEF gold Appearance {
+              material DEF gold Material {
+                diffuseColor 0.9607843137254902 0.9607843137254902 0.9607843137254902
+              }
+            }
+            geometry Sphere {
+              radius 0.03
+            }
+          }
+        ]
+        name "solid(2)"
+        boundingObject DEF BL_hip Sphere {
+          radius 0.03
+        }
+        physics Physics {
+        }
+      }
+    }
+    DEF FR Hinge2Joint {
+      jointParameters HingeJointParameters {
+        anchor 0.28 0 0.15
+      }
+      jointParameters2 JointParameters {
+      }
+      device [
+        RotationalMotor {
+          name "FR_motor1_Alp"
+          maxTorque 20
+        }
+        PositionSensor {
+          name "FR_sensor1_Alp"
+        }
+      ]
+      device2 [
+        RotationalMotor {
+          name "FR_motor2_Alp"
+          maxTorque 20
+        }
+        PositionSensor {
+          name "FR_sensor2_Alp"
+        }
+      ]
+      endPoint DEF FR_hip Solid {
+        translation 0.28 0 0.15
+        children [
+          DEF FR_leg1 Solid {
+            translation 0 -0.125 0
+            children [
+              HingeJoint {
+                jointParameters HingeJointParameters {
+                  axis 0 0 1
+                  anchor 0 -0.125 0
+                }
+                device [
+                  RotationalMotor {
+                    name "FR_motor3_Alp"
+                    maxTorque 20
+                  }
+                  PositionSensor {
+                    name "FR_sensor3_Alp"
+                  }
+                ]
+                endPoint DEF FR_knee Solid {
+                  translation 0 -0.125 0
+                  rotation 0 0 1 0
+                  children [
+                    DEF FR_leg2 Solid {
+                      translation 0 -0.125 0
+                      children [
+                        DEF FR_foot TouchSensor {
+                          translation 0 -0.125 0
+                          children [
+                            DEF FR_foot Shape {
+                              appearance Appearance {
+                                material Material {
+                                  diffuseColor 0.9607843137254902 0.9607843137254902 0.9607843137254902
+                                }
+                              }
+                              geometry Sphere {
+                                radius 0.025
+                              }
+                            }
+                          ]
+                          boundingObject Sphere {
+                            radius 0.025
+                          }
+                          physics Physics {
+                          }
+                        }
+                        DEF FR_leg2 Shape {
+                          appearance Appearance {
+                            material Material {
+                              diffuseColor 0.27450980392156865 0.5098039215686274 0.7058823529411765
+                            }
+                          }
+                          geometry Box {
+                            size 0.04 0.25 0.02
+                          }
+                        }
+                      ]
+                      boundingObject DEF FR_leg2 Box {
+                        size 0.04 0.2 0.02
+                      }
+                      physics Physics {
+                      }
+                    }
+                    DEF FR_knee Shape {
+                      appearance Appearance {
+                        material Material {
+                          diffuseColor 0.9607843137254902 0.9607843137254902 0.9607843137254902
+                        }
+                      }
+                      geometry Sphere {
+                        radius 0.03
+                      }
+                    }
+                  ]
+                  boundingObject DEF FR_knee Sphere {
+                    radius 0.03
+                  }
+                  physics Physics {
+                  }
+                }
+              }
+              DEF FR_leg1 Shape {
+                appearance Appearance {
+                  material Material {
+                    diffuseColor 0.27450980392156865 0.5098039215686274 0.7058823529411765
+                  }
+                }
+                geometry Box {
+                  size 0.04 0.25 0.02
+                }
+              }
+            ]
+            boundingObject DEF FR_leg1 Box {
+              size 0.04 0.2 0.02
+            }
+            physics Physics {
+            }
+          }
+          DEF FR_hip Shape {
+            appearance Appearance {
+              material Material {
+                diffuseColor 0.9607843137254902 0.9607843137254902 0.9607843137254902
+              }
+            }
+            geometry Sphere {
+              radius 0.03
+            }
+          }
+        ]
+        name "solid(1)"
+        boundingObject DEF FR_hip Sphere {
+          radius 0.03
+        }
+        physics Physics {
+        }
+      }
+    }
+    DEF FL Hinge2Joint {
+      jointParameters HingeJointParameters {
+        anchor 0.28 0 -0.15
+      }
+      jointParameters2 JointParameters {
+      }
+      device [
+        RotationalMotor {
+          name "FL_motor1_Alp"
+          maxTorque 20
+        }
+        PositionSensor {
+          name "FL_sensor1_Alp"
+        }
+      ]
+      device2 [
+        RotationalMotor {
+          name "FL_motor2_Alp"
+          maxTorque 20
+        }
+        PositionSensor {
+          name "FL_sensor2_Alp"
+        }
+      ]
+      endPoint Solid {
+        translation 0.28 0 -0.15
+        children [
+          DEF FL_leg1 Solid {
+            translation 0 -0.125 0
+            children [
+              HingeJoint {
+                jointParameters HingeJointParameters {
+                  axis 0 0 1
+                  anchor 0 -0.125 0
+                }
+                device [
+                  RotationalMotor {
+                    name "FL_motor3_Alp"
+                    maxTorque 20
+                  }
+                  PositionSensor {
+                    name "FL_sensor3_Alp"
+                  }
+                ]
+                endPoint Solid {
+                  translation 0 -0.125 0
+                  rotation 0 0 1 0
+                  children [
+                    DEF FL_leg2 Solid {
+                      translation 0 -0.125 0
+                      children [
+                        DEF FL_foot TouchSensor {
+                          translation 0 -0.125 0
+                          children [
+                            DEF FL_foot Shape {
+                              appearance Appearance {
+                                material Material {
+                                  diffuseColor 0.9607843137254902 0.9607843137254902 0.9607843137254902
+                                }
+                              }
+                              geometry Sphere {
+                                radius 0.025
+                              }
+                            }
+                          ]
+                          boundingObject Sphere {
+                            radius 0.025
+                          }
+                          physics Physics {
+                          }
+                        }
+                        DEF FL_leg2 Shape {
+                          appearance Appearance {
+                            material Material {
+                              diffuseColor 0.27450980392156865 0.5098039215686274 0.7058823529411765
+                            }
+                          }
+                          geometry Box {
+                            size 0.04 0.25 0.02
+                          }
+                        }
+                      ]
+                      boundingObject DEF FL_leg2 Box {
+                        size 0.04 0.2 0.02
+                      }
+                      physics Physics {
+                      }
+                    }
+                    DEF FL_knee Shape {
+                      appearance Appearance {
+                        material Material {
+                          diffuseColor 0.9607843137254902 0.9607843137254902 0.9607843137254902
+                        }
+                      }
+                      geometry Sphere {
+                        radius 0.03
+                      }
+                    }
+                  ]
+                  boundingObject DEF FL_knee Sphere {
+                    radius 0.03
+                  }
+                  physics Physics {
+                  }
+                }
+              }
+              DEF FL_leg1 Shape {
+                appearance Appearance {
+                  material Material {
+                    diffuseColor 0.27450980392156865 0.5098039215686274 0.7058823529411765
+                  }
+                }
+                geometry Box {
+                  size 0.04 0.25 0.02
+                }
+              }
+            ]
+            boundingObject DEF FL_leg1 Box {
+              size 0.04 0.25 0.02
+            }
+            physics Physics {
+            }
+          }
+          DEF FL_hip Shape {
+            appearance DEF Tuesday_white Appearance {
+              material DEF Tuesday_white Material {
+                diffuseColor 0.9607843137254902 0.9607843137254902 0.9607843137254902
+              }
+            }
+            geometry Sphere {
+              radius 0.03
+            }
+          }
+        ]
+        boundingObject DEF FL_hip Sphere {
+          radius 0.03
+        }
+        physics Physics {
+        }
+      }
+    }
+    DEF BODY Group {
+      children [
+        DEF BODY Shape {
+          appearance DEF Tuesday_blue Appearance {
+            material DEF Tuesday_blue Material {
+              ambientIntensity 0.1
+              diffuseColor 0.26666666666666666 0.5098039215686274 0.7058823529411765
+            }
+          }
+          geometry Box {
+            size 0.6 0.03 0.3
+          }
+        }
+      ]
+    }
+  ]
+  name "Tuesday"
+  boundingObject DEF ROBOT Box {
+    size 0.4 0.06 0.25
+  }
+  physics Physics {
+  }
+  controller "Tuesday"
+}
+DEF Wensday Robot {
+  translation 0 0.6 2
+  children [
+    DEF BODY Group {
+      children [
+        DEF R Transform {
+          translation 0 0 -0.15
+          rotation 0 0 1 1.5708003061004252
+          children [
+            Shape {
+              appearance Appearance {
+                material Material {
+                  diffuseColor 1 0.8431372549019608 0
+                }
+              }
+              geometry Capsule {
+                height 0.6
+                radius 0.01
+              }
+            }
+          ]
+        }
+        DEF L Transform {
+          translation 0 0 0.15
+          rotation 0 0 1 1.5708003061004252
+          children [
+            Shape {
+              appearance Appearance {
+                material Material {
+                  diffuseColor 1 0.8431372549019608 0
+                }
+              }
+              geometry Capsule {
+                height 0.6
+                radius 0.01
+              }
+            }
+          ]
+        }
+        DEF B Transform {
+          translation -0.3 0 0
+          rotation 1 0 0 1.5708003061004252
+          children [
+            Shape {
+              appearance Appearance {
+                material Material {
+                  diffuseColor 1 0.8431372549019608 0
+                }
+              }
+              geometry Capsule {
+                height 0.3
+                radius 0.01
+              }
+            }
+          ]
+        }
+        DEF F Transform {
+          translation 0.3 0 0
+          rotation 1 0 0 1.5708003061004252
+          children [
+            Shape {
+              appearance Appearance {
+                material Material {
+                  diffuseColor 1 0.8431372549019608 0
+                }
+              }
+              geometry Capsule {
+                height 0.3
+                radius 0.01
+              }
+            }
+          ]
+        }
+        DEF BODY Shape {
+          appearance Appearance {
+            material Material {
+              diffuseColor 1 0.8431372549019608 0
+            }
+          }
+          geometry Box {
+            size 0.6 0.02 0.3
+          }
+        }
+      ]
+    }
+    DEF BL Hinge2Joint {
+      jointParameters HingeJointParameters {
+        anchor -0.28 0 -0.16
+      }
+      jointParameters2 JointParameters {
+      }
+      device [
+        DEF Wen_BL_motor1 RotationalMotor {
+          name "Wen_BL_motor1"
+          maxTorque 20
+        }
+        PositionSensor {
+          name "Wen_BL_sensor1"
+        }
+      ]
+      device2 [
+        RotationalMotor {
+          name "Wen_BL_motor2"
+          maxTorque 20
+        }
+        DEF Wen_BL_sensor2 PositionSensor {
+          name "Wen_BL_sensor2"
+        }
+      ]
+      endPoint Solid {
+        translation -0.28 0 -0.16
+        children [
+          SliderJoint {
+            jointParameters JointParameters {
+              axis 0 1 0
+            }
+            device [
+              PositionSensor {
+                name "Wen_BL_sensor3"
+              }
+              DEF Wen_BR_motor3 LinearMotor {
+                name "Wen_BL_motor3"
+                maxForce 100
+              }
+            ]
+            endPoint Solid {
+              translation 0 -0.1 0
+              children [
+                DEF FL_touch TouchSensor {
+                  translation 0 -0.25 0
+                  children [
+                    DEF FL_touch Shape {
+                      appearance Appearance {
+                        material Material {
+                          diffuseColor 1 0.7137254901960784 0.7568627450980392
+                        }
+                      }
+                      geometry Sphere {
+                        radius 0.015
+                      }
+                    }
+                  ]
+                  name "FL_touch sensor"
+                  boundingObject Sphere {
+                    radius 0.015
+                  }
+                  physics Physics {
+                  }
+                }
+                DEF FL_leg Shape {
+                  appearance Appearance {
+                    material Material {
+                      diffuseColor 0.5019607843137255 0 0.5019607843137255
+                    }
+                  }
+                  geometry Cylinder {
+                    height 0.5
+                    radius 0.015
+                  }
+                }
+              ]
+              boundingObject Cylinder {
+                height 0.5
+                radius 0.015
+              }
+              physics Physics {
+              }
+            }
+          }
+          DEF FL_hip Shape {
+            appearance Appearance {
+              material Material {
+                diffuseColor 0.6588235294117647 0.3333333333333333 0.8274509803921568
+              }
+            }
+            geometry Sphere {
+              radius 0.03
+            }
+          }
+        ]
+        name "solid(4)"
+        boundingObject Sphere {
+          radius 0.03
+          subdivision 2
+        }
+        physics Physics {
+        }
+      }
+    }
+    DEF BR Hinge2Joint {
+      jointParameters HingeJointParameters {
+        anchor -0.28 0 0.16
+      }
+      jointParameters2 JointParameters {
+      }
+      device [
+        DEF Wen_BR_motor1 RotationalMotor {
+          name "Wen_BR_motor1"
+          maxTorque 20
+        }
+        PositionSensor {
+          name "Wen_BR_sensor1"
+        }
+      ]
+      device2 [
+        RotationalMotor {
+          name "Wen_BR_motor2"
+          maxTorque 20
+        }
+        DEF Wen_FL_sensor2 PositionSensor {
+          name "Wen_BR_sensor2"
+        }
+      ]
+      endPoint Solid {
+        translation -0.28 0 0.16
+        children [
+          SliderJoint {
+            jointParameters JointParameters {
+              axis 0 1 0
+            }
+            device [
+              PositionSensor {
+                name "Wen_BR_sensor3"
+              }
+              DEF Wen_BR_motor3 LinearMotor {
+                name "Wen_BR_motor3"
+                maxForce 100
+              }
+            ]
+            endPoint Solid {
+              translation 0 -0.1 0
+              children [
+                DEF FL_touch TouchSensor {
+                  translation 0 -0.25 0
+                  children [
+                    DEF FL_touch Shape {
+                      appearance Appearance {
+                        material Material {
+                          diffuseColor 1 0.7137254901960784 0.7568627450980392
+                        }
+                      }
+                      geometry Sphere {
+                        radius 0.015
+                      }
+                    }
+                  ]
+                  name "FL_touch sensor"
+                  boundingObject Sphere {
+                    radius 0.015
+                  }
+                  physics Physics {
+                  }
+                }
+                DEF FL_leg Shape {
+                  appearance Appearance {
+                    material Material {
+                      diffuseColor 0.5019607843137255 0 0.5019607843137255
+                    }
+                  }
+                  geometry Cylinder {
+                    height 0.5
+                    radius 0.015
+                  }
+                }
+              ]
+              boundingObject Cylinder {
+                height 0.5
+                radius 0.015
+              }
+              physics Physics {
+              }
+            }
+          }
+          DEF FL_hip Shape {
+            appearance Appearance {
+              material Material {
+                diffuseColor 0.6588235294117647 0.3333333333333333 0.8274509803921568
+              }
+            }
+            geometry Sphere {
+              radius 0.03
+            }
+          }
+        ]
+        name "solid(3)"
+        boundingObject Sphere {
+          radius 0.03
+          subdivision 2
+        }
+        physics Physics {
+        }
+      }
+    }
+    DEF FR Hinge2Joint {
+      jointParameters HingeJointParameters {
+        anchor 0.28 0 0.16
+      }
+      jointParameters2 JointParameters {
+      }
+      device [
+        DEF Wen_FR_motor1 RotationalMotor {
+          name "Wen_FR_motor1"
+          maxTorque 20
+        }
+        PositionSensor {
+          name "Wen_FR_sensor1"
+        }
+      ]
+      device2 [
+        RotationalMotor {
+          name "Wen_FR_motor2"
+          maxTorque 20
+        }
+        DEF Wen_FL_sensor2 PositionSensor {
+          name "Wen_FR_sensor2"
+        }
+      ]
+      endPoint Solid {
+        translation 0.28 0 0.16
+        children [
+          SliderJoint {
+            jointParameters JointParameters {
+              axis 0 1 0
+            }
+            device [
+              PositionSensor {
+                name "Wen_FR_sensor3"
+              }
+              DEF Wen_FL_motor3 LinearMotor {
+                name "Wen_FR_motor3"
+                maxForce 100
+              }
+            ]
+            endPoint Solid {
+              translation 0 -0.1 0
+              children [
+                DEF FL_touch TouchSensor {
+                  translation 0 -0.25 0
+                  children [
+                    DEF FL_touch Shape {
+                      appearance Appearance {
+                        material Material {
+                          diffuseColor 1 0.7137254901960784 0.7568627450980392
+                        }
+                      }
+                      geometry Sphere {
+                        radius 0.015
+                      }
+                    }
+                  ]
+                  name "FL_touch sensor"
+                  boundingObject Sphere {
+                    radius 0.015
+                  }
+                  physics Physics {
+                  }
+                }
+                DEF FL_leg Shape {
+                  appearance Appearance {
+                    material Material {
+                      diffuseColor 0.5019607843137255 0 0.5019607843137255
+                    }
+                  }
+                  geometry Cylinder {
+                    height 0.5
+                    radius 0.015
+                  }
+                }
+              ]
+              boundingObject Cylinder {
+                height 0.5
+                radius 0.015
+              }
+              physics Physics {
+              }
+            }
+          }
+          DEF FL_hip Shape {
+            appearance Appearance {
+              material Material {
+                diffuseColor 0.6588235294117647 0.3333333333333333 0.8274509803921568
+              }
+            }
+            geometry Sphere {
+              radius 0.03
+            }
+          }
+        ]
+        name "solid(2)"
+        boundingObject Sphere {
+          radius 0.03
+          subdivision 2
+        }
+        physics Physics {
+        }
+      }
+    }
+    DEF FL Hinge2Joint {
+      jointParameters HingeJointParameters {
+        anchor 0.28 0 -0.16
+      }
+      jointParameters2 JointParameters {
+      }
+      device [
+        DEF Wen_FL_motor1 RotationalMotor {
+          name "Wen_FL_motor1"
+        }
+        PositionSensor {
+          name "Wen_FL_sensor1"
+        }
+      ]
+      device2 [
+        RotationalMotor {
+          name "Wen_FL_motor2"
+        }
+        DEF Wen_FL_sensor2 PositionSensor {
+          name "Wen_FL_sensor2"
+        }
+      ]
+      endPoint Solid {
+        translation 0.28 0 -0.16
+        children [
+          SliderJoint {
+            jointParameters JointParameters {
+              axis 0 1 0
+            }
+            device [
+              PositionSensor {
+                name "Wen_FL_sensor3"
+              }
+              DEF Wen_FL_motor3 LinearMotor {
+                name "Wen_FL_motor3"
+                maxForce 100
+              }
+            ]
+            endPoint Solid {
+              translation 0 -0.1 0
+              children [
+                DEF FL_touch TouchSensor {
+                  translation 0 -0.25 0
+                  children [
+                    DEF FL_touch Shape {
+                      appearance Appearance {
+                        material Material {
+                          diffuseColor 1 0.7137254901960784 0.7568627450980392
+                        }
+                      }
+                      geometry Sphere {
+                        radius 0.015
+                      }
+                    }
+                  ]
+                  name "FL_touch sensor"
+                  boundingObject Sphere {
+                    radius 0.015
+                  }
+                  physics Physics {
+                  }
+                }
+                DEF FL_leg Shape {
+                  appearance Appearance {
+                    material Material {
+                      diffuseColor 0.5019607843137255 0 0.5019607843137255
+                    }
+                  }
+                  geometry Cylinder {
+                    height 0.5
+                    radius 0.015
+                  }
+                }
+              ]
+              boundingObject Cylinder {
+                height 0.5
+                radius 0.015
+              }
+              physics Physics {
+              }
+            }
+          }
+          DEF FL_hip Shape {
+            appearance Appearance {
+              material Material {
+                diffuseColor 0.6588235294117647 0.3333333333333333 0.8274509803921568
+              }
+            }
+            geometry Sphere {
+              radius 0.03
+            }
+          }
+        ]
+        name "solid(1)"
+        boundingObject Sphere {
+          radius 0.03
+          subdivision 2
+        }
+        physics Physics {
+        }
+      }
+    }
+  ]
+  boundingObject Box {
+    size 0.4 0.03 0.2
+  }
+  physics Physics {
+  }
+  controller ""
+}
+ThreeSteps {
+  translation 4.319999999999991 -0.5 -6.329999999999998
+  color 0.6666666666666666 0.3333333333333333 0
+}
+FloorLight {
+  translation 0 0 -3.9599999999999995
+}
+BigSassafras {
+  translation -6.250000000000002 0 0
+}
+Ramp30deg {
+  translation 7.36196616797194 -1.0406655941387999 0
+  rotation 0 0 1 -0.3926996938995747
+}
